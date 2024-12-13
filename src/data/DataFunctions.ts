@@ -186,7 +186,7 @@ export const addNewTransactionOld = (
   return responsePromise;
 };
 
-export const getAllPaymentsForCountry = (country) => {
+export const getAllPaymentsForCountry = (country: string) => {
   const transactionsPromise = axios({
     url: `${serverURL}/api/payment?country=${country}`,
     method: "GET",
@@ -203,7 +203,7 @@ export const getCountries = () => {
   });
 };
 
-export const addNewTransaction = (payment) => {
+export const addNewTransaction = (payment: PaymentType) => {
   return axios({
     url: `${serverURL}/api/payment`,
     method: "POST",
@@ -212,7 +212,7 @@ export const addNewTransaction = (payment) => {
   });
 };
 
-export const getAllPaymentsForOrderId = (orderId) => {
+export const getAllPaymentsForOrderId = (orderId: number) => {
   const transactionsPromise = axios({
     url: `${serverURL}/api/payment?order=${orderId}`,
     method: "GET",
